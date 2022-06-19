@@ -1,6 +1,6 @@
 import unittest
 
-from merge_sort import merge
+from merge_sort import merge, sort
 
 class TestMergeSort(unittest.TestCase):
     
@@ -44,3 +44,46 @@ class TestMergeSort(unittest.TestCase):
         result = merge(first_list, second_list)
 
         self.assertEqual(result, [1, 2, 2, 3, 4, 10, 17, 21])
+
+    def test_sort_empty_list(self):
+        list_to_sort = []
+
+        result = sort(list_to_sort)
+
+        self.assertEqual(result, [])
+
+    def test_sort_does_not_change_sorted_list(self):
+        list_to_sort = [1, 2, 3]
+
+        result = sort(list_to_sort)
+
+        self.assertEqual(result, [1, 2, 3])
+
+    def test_sort(self):
+        list_to_sort = [3, 1, 2, 9, 5]
+
+        result = sort(list_to_sort)
+
+        self.assertEqual(result, [1, 2, 3, 5 ,9])
+
+    def test_sort_with_duplicates(self):
+        list_to_sort = [3, 1, 2, 2, 9, 5]
+
+        result = sort(list_to_sort)
+
+        self.assertEqual(result, [1, 2, 2, 3, 5 ,9])
+
+    def test_sort_two_elements(self):
+        list_to_sort = [3, 1]
+
+        result = sort(list_to_sort)
+
+        self.assertEqual(result, [1, 3])
+
+
+    def test_sort_one_element(self):
+        list_to_sort = [1]
+
+        result = sort(list_to_sort)
+
+        self.assertEqual(result, [1])

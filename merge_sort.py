@@ -24,3 +24,15 @@ def merge(first_sorted_list, second_sorted_list):
             break
     return resulting_list
 
+def sort(list_to_sort):
+    if len(list_to_sort) < 2:
+        return list_to_sort
+
+    middle_point = len(list_to_sort) // 2
+    
+    left_sublist = sort(list_to_sort[:middle_point])
+    right_sublist = sort(list_to_sort[middle_point:])
+
+    return merge(left_sublist, right_sublist)
+
+
