@@ -12,7 +12,7 @@ Sorting algorithms demonstration: [https://www.cs.usfca.edu/~galles/visualizatio
 - Found minimum (or maximum) element just swapped with the element “occupying” its place
 - Selection sort is often better than bubble sort
 
-[Implementation:](selection_sort.py)
+Implementation: [here](selection_sort.py)
 
 ### **Insertion sort**
 
@@ -21,7 +21,7 @@ Sorting algorithms demonstration: [https://www.cs.usfca.edu/~galles/visualizatio
 - Then we insert item into “sorted” list, shifting items from sorted list right, if necessary
     - When we reach a smaller item or the end of the sorted sublist, current item can be inserted
 
-[Implementation:](insert_sort.py)
+Implementation: [here](insert_sort.py)
 
 ### **Bubble sort**
 
@@ -30,7 +30,7 @@ Sorting algorithms demonstration: [https://www.cs.usfca.edu/~galles/visualizatio
 - The algorithm continues until there’s a full collection run-through w/o swaps
 - Bubble sort may be very efficient if collection is already sorted - having O(N) best case complexity!
 
-[Implementation:](bubble_sort.py)
+Implementation: [here](bubble_sort.py)
 
 ### **Quick sort**
 
@@ -47,7 +47,7 @@ Sorting algorithms demonstration: [https://www.cs.usfca.edu/~galles/visualizatio
 - Repeat recursively for every sublist
 - Does not use additional storage (in contrast with merge sort)
 
-[Implementation:](quick_sort.py)
+Implementation: [here](quick_sort.py)
 
 ### **Merge sort**
 
@@ -59,4 +59,4 @@ Sorting algorithms demonstration: [https://www.cs.usfca.edu/~galles/visualizatio
 - Time complexity - O(N log(N)) (the only algorithms that **guarantees** O(N log(N)) worst-case complexity.
 - O(N) space complexity
 
-[Implementation:](merge_sort.py)
+Implementation: [here](merge_sort.py)
