@@ -23,13 +23,10 @@ def sort_logic_for_normal_list(list_to_sort, start_index, size):
         if list_to_sort[left_pointer] > list_to_sort[right_pointer]:
             list_to_sort[left_pointer], list_to_sort[right_pointer] = \
                 list_to_sort[right_pointer], list_to_sort[left_pointer]
+        if list_to_sort[left_pointer] <= pivot:
             left_pointer += 1
-            right_pointer += 1
-        else:
-            if list_to_sort[left_pointer] <= pivot:
-                left_pointer += 1
-            if list_to_sort[right_pointer] >= pivot:
-                right_pointer -= 1
+        if list_to_sort[right_pointer] >= pivot:
+            right_pointer -= 1
     
     list_to_sort[start_index], list_to_sort[right_pointer] = \
         list_to_sort[right_pointer], list_to_sort[start_index]

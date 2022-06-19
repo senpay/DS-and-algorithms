@@ -46,3 +46,10 @@ class TestQuickSort(unittest.TestCase):
         sort(list_to_sort)
 
         self.assertEqual(list_to_sort, [1, 2, 2, 3, 5 ,9])
+    
+    def test_sort_with_complex_case(self):
+        list_to_sort = [3, 10, 2, 2, 9, 5]
+
+        sort(list_to_sort)
+
+        self.assertEqual(list_to_sort, [2, 2, 3, 5, 9, 10])
