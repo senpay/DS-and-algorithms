@@ -1,3 +1,5 @@
+# Tree traversal
+
 Here we are going to play a bit with tree traversal algorithms. Have a look at the tree below:
 ![Example binary tree](our_tree.png)
 
@@ -33,3 +35,8 @@ This traversal algorithm will visit every node in the following order:
  ```
 D->E->B->F->G->C->A
  ```
+
+ # Parse tree
+ Parse tree allows parsing and understanding expressions, such as mathematical expressions or sentences. More info: https://runestone.academy/ns/books/published/pythonds/Trees/ParseTree.html
+
+ 

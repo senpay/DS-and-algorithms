@@ -1,6 +1,6 @@
 import unittest
 
-from trees.tree import Tree
+from trees.tree import Tree, build_parse_tree
 
 # Make test tree like the one in Read
 d = Tree('d')
@@ -25,3 +25,23 @@ class TestTree(unittest.TestCase):
     def test_postorder(self):
         nodes_values = a.postorder_traversal()
         self.assertEqual(nodes_values, ['d', 'e', 'b', 'f', 'g', 'c', 'a'])
+
+    def test_build_parse_tree_from_simple_expression(self):
+        expression = ' ( 12 + 21 )'
+
+        tree = build_parse_tree(expression)
+
+        self.assertEqual(tree.value, '+')
+        self.assertEqual(tree.left.value, '12')
+        self.assertEqual(tree.right.value, '21')
+
+    def test_build_parse_tree_from_nested_expression(self):
+        expression = ' ( 12 * (56 - 2) )'
+
+        tree = build_parse_tree(expression)
+
+        self.assertEqual(tree.value, '*')
+        self.assertEqual(tree.left.value, '12')
+        self.assertEqual(tree.right.value, '-')
+        self.assertEqual(tree.right.left.value, '56')
+        self.assertEqual(tree.right.right.value, '2')

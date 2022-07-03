@@ -30,3 +30,44 @@ class Tree:
             self.right.postorder_traversal(nodes_values)
         nodes_values.append(self.value)
         return nodes_values
+
+VALID_DIGITS = [str(x) for x in range(9)]
+VALID_OPERAIONS = ['-', '+', '/', '*']
+
+def build_child_parse_tree_value(operand):
+    return Tree(''.join(operand))
+
+def process_sub_parse_tree(root, expression, position):
+    child = build_parse_tree(expression, position - 1)
+    if not root.left:
+        root.left = child
+    else:
+        root.right = child
+
+def build_parse_tree(expression, position = 0):
+
+    root = None
+    operand = []
+    
+    while (position < len(expression) and
+           (not root or not root.left or not root.right)):
+        symbol = expression[position]
+        position += 1
+        if symbol == '(':
+            if root:
+                process_sub_parse_tree(root, expression, position)
+            else:
+                # create new tree node
+                # set value as None as we don't know what the value is going to be yet
+                root = Tree(None)
+        if symbol in VALID_DIGITS:
+            operand.append(symbol)
+        if symbol in VALID_OPERAIONS:
+            root.left = build_child_parse_tree_value(operand)
+            root.value = symbol
+            operand = []
+        if symbol == ')':
+            root.right = build_child_parse_tree_value(operand)
+            operand = []
+    return root
+
