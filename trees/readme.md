@@ -1,5 +1,5 @@
 Here we are going to play a bit with tree traversal algorithms. Have a look at the tree below:
-[Example binary tree](our_tree.png)
+![Example binary tree](our_tree.png)
 
 ## Pre-order traversal
 This traversal algorithm will visit every node in the following order:
