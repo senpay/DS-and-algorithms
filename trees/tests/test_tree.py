@@ -45,3 +45,22 @@ class TestTree(unittest.TestCase):
         self.assertEqual(tree.right.value, '-')
         self.assertEqual(tree.right.left.value, '56')
         self.assertEqual(tree.right.right.value, '2')
+
+    def test_calculate_parse_tree_value(self):
+
+        expression = ' ( 12 * (56 - 2) )'
+
+        tree = build_parse_tree(expression)
+
+        result = tree.calculate_parse_tree()
+
+        self.assertEqual(result, 648)
+
+    def test_print_parse_tree(self):
+        expression = ' ( 12 * (56 - 2) )'
+
+        parse_tree = build_parse_tree(expression)
+
+        result = parse_tree.print_parse_tree()
+
+        self.assertEqual(result, '(12*(56-2))')

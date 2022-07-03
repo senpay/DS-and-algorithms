@@ -31,6 +31,36 @@ class Tree:
         nodes_values.append(self.value)
         return nodes_values
 
+    def calculate_parse_tree(self):
+        left_operand = _process_parse_tree_node(self.left)
+        right_operand = _process_parse_tree_node(self.right)
+
+        if self.value == '-':
+            return left_operand - right_operand
+        if self.value == '+':
+            return left_operand + right_operand
+        if self.value == '/':
+            return left_operand / right_operand
+        if self.value == '*':
+            return left_operand * right_operand
+
+    def print_parse_tree(self):
+        if not self.left:
+            # means it's a leaf
+            return self.value
+        result = []
+        result.append('(')
+        result.append(self.left.print_parse_tree())
+        result.append(self.value)
+        result.append(self.right.print_parse_tree())
+        result.append(')')
+        return ''.join(result)
+        
+def _process_parse_tree_node(node):
+    if node.value.isdigit():
+        return int(node.value)
+    return node.calculate_parse_tree()
+
 VALID_DIGITS = [str(x) for x in range(9)]
 VALID_OPERAIONS = ['-', '+', '/', '*']
 
