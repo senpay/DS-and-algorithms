@@ -1,6 +1,6 @@
 import unittest
 
-from selection_sort import sort
+from sorting.selection_sort import sort
 
 class TestSelectCopySort(unittest.TestCase):
     

@@ -1,6 +1,6 @@
 import unittest
 
-from bubble_sort import sort
+from sorting.bubble_sort import sort
 
 class TestBubbleSort(unittest.TestCase):
     
